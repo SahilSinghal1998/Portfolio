@@ -10,11 +10,11 @@
 
  */
 var uaInfo = {
-	ua : '',
-	is : function (t) {
+	ua: '',
+	is: function (t) {
 		return RegExp(t, "i").test(uaInfo.ua);
 	},
-	version : function (p, n) {
+	version: function (p, n) {
 		n = n.replace(".", "_");
 		var i = n.indexOf('_'),
 			ver = "";
@@ -25,7 +25,7 @@ var uaInfo = {
 		ver += " " + p + n;
 		return ver;
 	},
-	getBrowser : function() {
+	getBrowser: function () {
 		var g = 'gecko',
 			w = 'webkit',
 			c = 'chrome',
@@ -41,56 +41,56 @@ var uaInfo = {
 
 		return [
 			(!(/opera|webtv/i.test(ua)) && /msie\s(\d+)/.test(ua)) ? ('ie ie' + (/trident\/4\.0/.test(ua) ? '8' : RegExp.$1))
-				:is('firefox/') ? g + " " + f + (/firefox\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua) ? ' ' + f + RegExp.$2 + ' ' + f + RegExp.$2 + "_" + RegExp.$4 : '')
-				:is('gecko/') ? g
-				:is('opera') ? o + (/version\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua) ? ' ' + o + RegExp.$2 + ' ' + o + RegExp.$2 + "_" + RegExp.$4 : (/opera(\s|\/)(\d+)\.(\d+)/.test(ua) ? ' ' + o + RegExp.$2 + " " + o + RegExp.$2 + "_" + RegExp.$3 : ''))
-				:is('konqueror') ? 'konqueror'
-				:is('blackberry') ? (bb + (/Version\/(\d+)(\.(\d+)+)/i.test(ua) ? " " + bb + RegExp.$1 + " " + bb + RegExp.$1 + RegExp.$2.replace('.', '_') : (/Blackberry ?(([0-9]+)([a-z]?))[\/|;]/gi.test(ua) ? ' ' + bb + RegExp.$2 + (RegExp.$3 ? ' ' + bb + RegExp.$2 + RegExp.$3 : '') : ''))) // blackberry
-				:is('android') ? (a + (/Version\/(\d+)(\.(\d+))+/i.test(ua) ? " " + a + RegExp.$1 + " " + a + RegExp.$1 + RegExp.$2.replace('.', '_') : '') + (/Android (.+); (.+) Build/i.test(ua) ? ' ' + dv + ((RegExp.$2).replace(/ /g, "_")).replace(/-/g, "_") : '')) //android
-				:is('chrome') ? w + ' ' + c + (/chrome\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua) ? ' ' + c + RegExp.$2 + ((RegExp.$4 > 0) ? ' ' + c + RegExp.$2 + "_" + RegExp.$4 : '') : '')
-				:is('iron') ? w + ' iron'
-				:is('applewebkit/') ? (w + ' ' + s + (/version\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua) ? ' ' + s + RegExp.$2 + " " + s + RegExp.$2 + RegExp.$3.replace('.', '_') : (/ Safari\/(\d+)/i.test(ua) ? ((RegExp.$1 == "419" || RegExp.$1 == "417" || RegExp.$1 == "416" || RegExp.$1 == "412") ? ' ' + s + '2_0' : RegExp.$1 == "312" ? ' ' + s + '1_3' : RegExp.$1 == "125" ? ' ' + s + '1_2' : RegExp.$1 == "85" ? ' ' + s + '1_0' : '') : ''))) //applewebkit
-				:is('mozilla/') ? g : ''
+				: is('firefox/') ? g + " " + f + (/firefox\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua) ? ' ' + f + RegExp.$2 + ' ' + f + RegExp.$2 + "_" + RegExp.$4 : '')
+					: is('gecko/') ? g
+						: is('opera') ? o + (/version\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua) ? ' ' + o + RegExp.$2 + ' ' + o + RegExp.$2 + "_" + RegExp.$4 : (/opera(\s|\/)(\d+)\.(\d+)/.test(ua) ? ' ' + o + RegExp.$2 + " " + o + RegExp.$2 + "_" + RegExp.$3 : ''))
+							: is('konqueror') ? 'konqueror'
+								: is('blackberry') ? (bb + (/Version\/(\d+)(\.(\d+)+)/i.test(ua) ? " " + bb + RegExp.$1 + " " + bb + RegExp.$1 + RegExp.$2.replace('.', '_') : (/Blackberry ?(([0-9]+)([a-z]?))[\/|;]/gi.test(ua) ? ' ' + bb + RegExp.$2 + (RegExp.$3 ? ' ' + bb + RegExp.$2 + RegExp.$3 : '') : ''))) // blackberry
+									: is('android') ? (a + (/Version\/(\d+)(\.(\d+))+/i.test(ua) ? " " + a + RegExp.$1 + " " + a + RegExp.$1 + RegExp.$2.replace('.', '_') : '') + (/Android (.+); (.+) Build/i.test(ua) ? ' ' + dv + ((RegExp.$2).replace(/ /g, "_")).replace(/-/g, "_") : '')) //android
+										: is('chrome') ? w + ' ' + c + (/chrome\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua) ? ' ' + c + RegExp.$2 + ((RegExp.$4 > 0) ? ' ' + c + RegExp.$2 + "_" + RegExp.$4 : '') : '')
+											: is('iron') ? w + ' iron'
+												: is('applewebkit/') ? (w + ' ' + s + (/version\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua) ? ' ' + s + RegExp.$2 + " " + s + RegExp.$2 + RegExp.$3.replace('.', '_') : (/ Safari\/(\d+)/i.test(ua) ? ((RegExp.$1 == "419" || RegExp.$1 == "417" || RegExp.$1 == "416" || RegExp.$1 == "412") ? ' ' + s + '2_0' : RegExp.$1 == "312" ? ' ' + s + '1_3' : RegExp.$1 == "125" ? ' ' + s + '1_2' : RegExp.$1 == "85" ? ' ' + s + '1_0' : '') : ''))) //applewebkit
+													: is('mozilla/') ? g : ''
 		];
 	},
-	getPlatform : function() {
+	getPlatform: function () {
 		var ua = uaInfo.ua,
 			version = uaInfo.version,
 			is = uaInfo.is;
 
 		return [
 			is('j2me') ? 'j2me'
-			:is('ipad|ipod|iphone') ? (
-			(/CPU( iPhone)? OS (\d+[_|\.]\d+([_|\.]\d+)*)/i.test(ua) ? 'ios' + version('ios', RegExp.$2) : '') + ' ' + (/(ip(ad|od|hone))/gi.test(ua) ? RegExp.$1 : "")) //'iphone'
-			//:is('ipod')?'ipod'
-			//:is('ipad')?'ipad'
-			:is('playbook') ? 'playbook'
-			:is('kindle|silk') ? 'kindle'
-			:is('playbook') ? 'playbook'
-			:is('mac') ? 'mac' + (/mac os x ((\d+)[.|_](\d+))/.test(ua) ? (' mac' + (RegExp.$2) + ' mac' + (RegExp.$1).replace('.', "_")) : '')
-			:is('win') ? 'win' + (is('windows nt 6.2') ? ' win8'
-			:is('windows nt 6.1') ? ' win7'
-			:is('windows nt 6.0') ? ' vista'
-			:is('windows nt 5.2') || is('windows nt 5.1') ? ' win_xp'
-			:is('windows nt 5.0') ? ' win_2k'
-			:is('windows nt 4.0') || is('WinNT4.0') ? ' win_nt' : '')
-			:is('freebsd') ? 'freebsd'
-			:is('x11|linux') ? 'linux' : ''
+				: is('ipad|ipod|iphone') ? (
+					(/CPU( iPhone)? OS (\d+[_|\.]\d+([_|\.]\d+)*)/i.test(ua) ? 'ios' + version('ios', RegExp.$2) : '') + ' ' + (/(ip(ad|od|hone))/gi.test(ua) ? RegExp.$1 : "")) //'iphone'
+					//:is('ipod')?'ipod'
+					//:is('ipad')?'ipad'
+					: is('playbook') ? 'playbook'
+						: is('kindle|silk') ? 'kindle'
+							: is('playbook') ? 'playbook'
+								: is('mac') ? 'mac' + (/mac os x ((\d+)[.|_](\d+))/.test(ua) ? (' mac' + (RegExp.$2) + ' mac' + (RegExp.$1).replace('.', "_")) : '')
+									: is('win') ? 'win' + (is('windows nt 6.2') ? ' win8'
+										: is('windows nt 6.1') ? ' win7'
+											: is('windows nt 6.0') ? ' vista'
+												: is('windows nt 5.2') || is('windows nt 5.1') ? ' win_xp'
+													: is('windows nt 5.0') ? ' win_2k'
+														: is('windows nt 4.0') || is('WinNT4.0') ? ' win_nt' : '')
+										: is('freebsd') ? 'freebsd'
+											: is('x11|linux') ? 'linux' : ''
 		];
 	},
-	getMobile : function() {
+	getMobile: function () {
 		var is = uaInfo.is;
 		return [
 			is("android|mobi|mobile|j2me|iphone|ipod|ipad|blackberry|playbook|kindle|silk") ? 'mobile' : ''
 		];
 	},
-	getIpadApp : function() {
+	getIpadApp: function () {
 		var is = uaInfo.is;
 		return [
 			(is('ipad|iphone|ipod') && !is('safari')) ? 'ipad_app' : ''
 		];
 	},
-	getLang : function() {
+	getLang: function () {
 		var ua = uaInfo.ua;
 
 		return [
@@ -100,23 +100,23 @@ var uaInfo = {
 }
 
 var screenInfo = {
-	width : (window.outerWidth || html.clientWidth) - 15,
-	height : window.outerHeight || html.clientHeight,
-	screens : [0, 768, 980, 1200],
-	
-	screenSize : function () {
+	width: (window.outerWidth || html.clientWidth) - 15,
+	height: window.outerHeight || html.clientHeight,
+	screens: [0, 768, 980, 1200],
+
+	screenSize: function () {
 		screenInfo.width = (window.outerWidth || html.clientWidth) - 15;
 		screenInfo.height = window.outerHeight || html.clientHeight;
-			
+
 		var screens = screenInfo.screens,
 			i = screens.length,
 			arr = [],
-			maxw, 
+			maxw,
 			minw;
-		
-		while(i--) {
+
+		while (i--) {
 			if (screenInfo.width >= screens[i]) {
-				if(i) {
+				if (i) {
 					arr.push("minw_" + screens[(i)]);
 				}
 				if (i <= 2) {
@@ -127,20 +127,20 @@ var screenInfo = {
 		}
 		return arr;
 	},
-	getOrientation : function() {
+	getOrientation: function () {
 		return screenInfo.width < screenInfo.height ? ["orientation_portrait"] : ["orientation_landscape"];
 	},
-	getInfo : function() {
+	getInfo: function () {
 		var arr = [];
 		arr = arr.concat(screenInfo.screenSize());
 		arr = arr.concat(screenInfo.getOrientation());
-		return  arr;
+		return arr;
 	},
-	getPixelRatio : function() {
+	getPixelRatio: function () {
 		var arr = [],
 			pixelRatio = window.devicePixelRatio ? window.devicePixelRatio : 1;
 
-		if(pixelRatio > 1) {
+		if (pixelRatio > 1) {
 			arr.push('retina_' + parseInt(pixelRatio) + 'x');
 			arr.push('hidpi');
 		} else {
@@ -151,10 +151,10 @@ var screenInfo = {
 }
 
 var dataUriInfo = {
-	data : new Image(),
-	div : document.createElement("div"),
-	isIeLessThan9 : false,
-	getImg : function() {
+	data: new Image(),
+	div: document.createElement("div"),
+	isIeLessThan9: false,
+	getImg: function () {
 
 		dataUriInfo.data.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 		dataUriInfo.div.innerHTML = "<!--[if lt IE 9]><i></i><![endif]-->";
@@ -162,8 +162,8 @@ var dataUriInfo = {
 
 		return dataUriInfo.data;
 	},
-	checkSupport : function() {
-		if(dataUriInfo.data.width != 1 || dataUriInfo.data.height != 1 || dataUriInfo.isIeLessThan9) {
+	checkSupport: function () {
+		if (dataUriInfo.data.width != 1 || dataUriInfo.data.height != 1 || dataUriInfo.isIeLessThan9) {
 			return ["no-datauri"];
 		}
 		else {
@@ -176,7 +176,7 @@ var dataUriInfo = {
 function css_browser_selector(u, ns) {
 	var html = document.documentElement,
 		b = []
-		ns = ns ? ns : "";
+	ns = ns ? ns : "";
 
 	/* ua */
 	uaInfo.ua = u.toLowerCase();
@@ -196,7 +196,7 @@ function css_browser_selector(u, ns) {
 	/* screen */
 	b = b.concat(screenInfo.getInfo());
 
-	var updateScreen = function() {
+	var updateScreen = function () {
 		html.className = html.className.replace(/ ?orientation_\w+/g, "").replace(/ [min|max|cl]+[w|h]_\d+/g, "");
 		html.className = html.className + ' ' + screenInfo.getInfo().join(' ');
 	}
@@ -206,13 +206,13 @@ function css_browser_selector(u, ns) {
 
 	/* dataURI */
 	var data = dataUriInfo.getImg();
-	data.onload = data.onerror = function(){
+	data.onload = data.onerror = function () {
 		html.className += ' ' + dataUriInfo.checkSupport().join(' ');
 	}
 
 
 	/* removendo itens invalidos do array */
-	b = b.filter(function(e){
+	b = b.filter(function (e) {
 		return e;
 	});
 
