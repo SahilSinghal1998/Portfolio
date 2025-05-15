@@ -9961,11 +9961,11 @@ select.top-drop-menu {
   text-align: center;
 }
 
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
   .portfolio-holder .portfolio-item a {
-    /* min-height: 358px;*/
+     min-height: 358px;
   }
-}
+}*/
 
 @media (max-width: 1199px) {
   header .sticky-paper-head {
