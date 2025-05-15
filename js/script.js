@@ -5,24 +5,28 @@ var scrollOffset = -30;
   $(window).bind("load", function () {
     $('#status').fadeOut(); // will first fade out the loading animation
     $('#preloader').delay(1000).fadeOut('slow'); // will fade out the white DIV that covers the website.
-    $('body').delay(1000).css({ 'overflow-x': 'hidden' }).css({ 'overflow-y': 'auto' });
+    $('body').delay(1000).css({
+      'overflow-x': 'hidden'
+    }).css({
+      'overflow-y': 'auto'
+    });
     checkContactForm();
-    $('body').scrollspy({ target: '.nav-menu' });
+    $('body').scrollspy({
+      target: '.nav-menu'
+    });
     $('body').data()['bs.scrollspy'].options.offset = Math.abs(scrollOffset) + 10; // Set the new offset 
     $('body').data()['bs.scrollspy'].process(); // Force scrollspy to recalculate the offsets to your targets 
     $('body').scrollspy('refresh'); // Refresh the scrollspy.
   });
 
   $(window).ready(function () {
-    var wow = new WOW(
-      {
-        boxClass: 'wow', // animated element css class (default is wow)
-        animateClass: 'animated', // animation css class (default is animated)
-        offset: '-200px', // distance to the element when triggering the animation (default is 0)
-        mobile: true, // trigger animations on mobile devices (default is true)
-        live: true        // act on asynchronously loaded content (default is true)
-      }
-    );
+    var wow = new WOW({
+      boxClass: 'wow', // animated element css class (default is wow)
+      animateClass: 'animated', // animation css class (default is animated)
+      offset: '-200px', // distance to the element when triggering the animation (default is 0)
+      mobile: true, // trigger animations on mobile devices (default is true)
+      live: true // act on asynchronously loaded content (default is true)
+    });
 
     new WOW().init();
 
@@ -35,6 +39,7 @@ var scrollOffset = -30;
     });
 
     $('.has-shadow').append('<div class="shadow"></div>');
+
     function getImgSize(el, imgSrc) {
       var newImg = new Image();
       newImg.onload = function () {
@@ -62,11 +67,16 @@ var scrollOffset = -30;
 
     if ($('.portfolio-item').length > 0) {
       var $container = $('#portfolio-grid');
-      $container.isotope({ filter: '*' });
+      $container.isotope({
+        filter: '*'
+      });
       $('.group-selectors a').click(function (e) {
         e.preventDefault();
         var selector = $(this).attr('data-filter');
-        $container.isotope({ filter: selector, columnWidth: 4 });
+        $container.isotope({
+          filter: selector,
+          columnWidth: 4
+        });
         $('.group-selectors a.active').removeClass('active');
         $(this).toggleClass('active');
         return false;
@@ -195,14 +205,17 @@ $(window).scroll(function (e) {
   var nav_anchor = $(".top-menu-holder");
   var gotop = $(document);
   if ($(this).scrollTop() >= 500) {
-    $('.goto-top').css({ 'opacity': 1 });
+    $('.goto-top').css({
+      'opacity': 1
+    });
   } else if ($(this).scrollTop() < 500) {
-    $('.goto-top').css({ 'opacity': 0 });
+    $('.goto-top').css({
+      'opacity': 0
+    });
   }
   if ($(this).scrollTop() >= $('header').height()) {
     nav_anchor.addClass('split');
-  }
-  else if ($(this).scrollTop() < $('header').height()) {
+  } else if ($(this).scrollTop() < $('header').height()) {
     nav_anchor.removeClass('split');
   }
 });
@@ -213,6 +226,6 @@ if (!window.requestAnimationFrame) {
       window.mozRequestAnimationFrame ||
       window.oRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
-      function (/* function FrameRequestCallback / callback, / DOMElement Element */ element) { };
+      function ( /* function FrameRequestCallback / callback, / DOMElement Element */ element) { };
   })();
 }

@@ -1,6 +1,6 @@
 /*! jQuery Validation Plugin - v1.10.0 - 9/7/2012
-* https://github.com/jzaefferer/jquery-validation
-* Copyright (c) 2012 Jörn Zaefferer; Licensed MIT, GPL */
+ * https://github.com/jzaefferer/jquery-validation
+ * Copyright (c) 2012 Jörn Zaefferer; Licensed MIT, GPL */
 
 (function ($) {
 
@@ -46,6 +46,7 @@
 						// prevent form submit to be able to see console output
 						event.preventDefault();
 					}
+
 					function handle() {
 						var hidden;
 						if (validator.settings.submitHandler) {
@@ -137,8 +138,7 @@
 			}
 
 			var data = $.validator.normalizeRules(
-				$.extend(
-					{},
+				$.extend({},
 					$.validator.metadataRules(element),
 					$.validator.classRules(element),
 					$.validator.attributeRules(element),
@@ -149,7 +149,9 @@
 			if (data.required) {
 				var param = data.required;
 				delete data.required;
-				data = $.extend({ required: param }, data);
+				data = $.extend({
+					required: param
+				}, data);
 			}
 
 			return data;
@@ -159,11 +161,17 @@
 	// Custom selectors
 	$.extend($.expr[":"], {
 		// http://docs.jquery.com/Plugins/Validation/blank
-		blank: function (a) { return !$.trim("" + a.value); },
+		blank: function (a) {
+			return !$.trim("" + a.value);
+		},
 		// http://docs.jquery.com/Plugins/Validation/filled
-		filled: function (a) { return !!$.trim("" + a.value); },
+		filled: function (a) {
+			return !!$.trim("" + a.value);
+		},
 		// http://docs.jquery.com/Plugins/Validation/unchecked
-		unchecked: function (a) { return !a.checked; }
+		unchecked: function (a) {
+			return !a.checked;
+		}
 	});
 
 	// constructor for validator
@@ -524,7 +532,10 @@
 				var result;
 
 				for (var method in rules) {
-					var rule = { method: method, parameters: rules[method] };
+					var rule = {
+						method: method,
+						parameters: rules[method]
+					};
 					try {
 
 						result = $.validator.methods[method].call(this, val, element, rule.parameters);
@@ -680,7 +691,10 @@
 				} else {
 					// create label
 					label = $("<" + this.settings.errorElement + "/>")
-						.attr({ "for": this.idOrName(element), generated: true })
+						.attr({
+							"for": this.idOrName(element),
+							generated: true
+						})
 						.addClass(this.settings.errorClass)
 						.html(message || "");
 					if (this.settings.wrapper) {
@@ -801,14 +815,30 @@
 		},
 
 		classRuleSettings: {
-			required: { required: true },
-			email: { email: true },
-			url: { url: true },
-			date: { date: true },
-			dateISO: { dateISO: true },
-			number: { number: true },
-			digits: { digits: true },
-			creditcard: { creditcard: true }
+			required: {
+				required: true
+			},
+			email: {
+				email: true
+			},
+			url: {
+				url: true
+			},
+			date: {
+				date: true
+			},
+			dateISO: {
+				dateISO: true
+			},
+			number: {
+				number: true
+			},
+			digits: {
+				digits: true
+			},
+			creditcard: {
+				creditcard: true
+			}
 		},
 
 		addClassRules: function (className, rules) {
@@ -1006,7 +1036,9 @@
 				previous.originalMessage = this.settings.messages[element.name].remote;
 				this.settings.messages[element.name].remote = previous.message;
 
-				param = typeof param === "string" && { url: param } || param;
+				param = typeof param === "string" && {
+					url: param
+				} || param;
 
 				if (this.pending[element.name]) {
 					return "pending";
@@ -1228,6 +1260,7 @@
 					return $.event.handle.apply(this, args);
 				}
 			};
+
 			function handler(e) {
 				e = $.event.fix(e);
 				e.type = fix;
