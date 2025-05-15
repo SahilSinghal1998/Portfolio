@@ -8953,7 +8953,7 @@ header .avatar:after {
 
 .timeline-content.left {
   text-align: right;
-  margin-left: 10%;
+  margin-left: 3%;
 }
 
 .timeline-content.left:before {
@@ -8985,7 +8985,7 @@ header .avatar:after {
 }
 
 .profile-item .profile-content {
-  width: 34%;
+  width: 41%;
   min-height: 65px;
   padding: 15px;
 }
