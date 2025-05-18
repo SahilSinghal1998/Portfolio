@@ -8263,6 +8263,16 @@ header {
   color: #272425;
 }
 
+blockquote {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  color: #272425;
+  background-color: rgba(216, 205, 187, 0.3);
+  border-radius: 0px 10px 10px 0px;
+  width: 600px;
+}
+
 p strong {
   color: #ffffff;
   background-color: #272425;
