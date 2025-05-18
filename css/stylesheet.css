@@ -9078,15 +9078,12 @@ header .avatar:after {
 }
 
 #skillslist li span {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .interests-row.big li i {
-  top: -15%;
-  font-size: 20px;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
+  font-size: 25px;
+  top: 25%;
 }
 
 .interests-row.medium li {
@@ -9153,12 +9150,12 @@ header .avatar:after {
 }
 
 .interests-row ul li:hover i {
-  transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  top: -18px;
+  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  top: 30%;
 }
 
 .interests-row ul li:hover span {
