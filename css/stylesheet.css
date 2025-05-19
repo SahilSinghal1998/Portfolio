@@ -147,6 +147,7 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  appearance: button;
   -webkit-appearance: button;
   cursor: pointer;
 }
@@ -178,6 +179,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="search"] {
+  appearance: textfield;
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
@@ -186,6 +188,7 @@ input[type="search"] {
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
+  appearance: none;
   -webkit-appearance: none;
 }
 
@@ -3105,6 +3108,7 @@ textarea.form-control {
 }
 
 input[type="search"] {
+  appearance: none;
   -webkit-appearance: none;
 }
 
@@ -6689,6 +6693,7 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .modal-open {
