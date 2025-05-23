@@ -8213,7 +8213,7 @@ header {
 }
 
 .sticky-paper-body .content {
-  width: 97%;
+  width: 100%;
   position: relative;
   z-index: 30;
   padding-top: 30px;
@@ -8236,7 +8236,7 @@ header {
 }
 
 .le-paragraph {
-  padding: 0px 0 0 120px;
+  padding: 0px 0 0 100px;
   font-size: 14px;
   line-height: 23px;
   position: relative;
@@ -8795,7 +8795,6 @@ header .avatar:after {
 .top-menu-holder {
   position: absolute;
   top: 10px;
-  right: 10px;
 }
 
 .top-menu-holder.split {
@@ -9403,7 +9402,7 @@ header .avatar:after {
 
 /*Portfolio*/
 #portfolio-grid {
-  width: 103%;
+  width: 98%;
   margin: 30px auto;
 }
 
@@ -9562,7 +9561,7 @@ header .avatar:after {
 }
 
 .portfolio-holder .portfolio-item .category:before {
-  background-color: #479683;
+  background-color: #e64a3b;
   -webkit-transform: skewX(-8deg) skewY(0deg) rotate(-2deg) !important;
   -ms-transform: skewX(-8deg) skewY(0deg) rotate(-2deg) !important;
   -o-transform: skewX(-8deg) skewY(0deg) rotate(-2deg) !important;
@@ -9640,12 +9639,12 @@ header .avatar:after {
   margin: 20px 0;
 }
 
-#contact .row-contact .contact-info h2 {
+#contact .row-contact .contact-info {
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 20px;
-  font-weight: 800 !important;
-  margin: 0 0 23px 0;
+  margin: 0 0 25px 0;
+  text-align: center;
 }
 
 #contact .row-contact .contact-info ul {
