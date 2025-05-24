@@ -8331,6 +8331,7 @@ readers do not read off random characters that represent icons */
 .fab,
 .fa-brands {
   font-weight: 400;
+  font-weight: bold;
 }
 
 .fa-monero {
