@@ -9142,6 +9142,7 @@ header .avatar:after {
 }
 
 .interests-row ul li i,
+.interests-row ul li svg,
 .interests-row ul li span {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -10278,4 +10279,26 @@ select.top-drop-menu {
 
 .myleft:before {
   content: '' !important;
+}
+
+.interests-row ul li svg {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin: 25% 0 0 -13%;
+}
+
+.interests-row ul li:hover svg {
+  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  margin: 25% 0 0 -13%;
+  fill: #ffffff;
+}
+
+.interests-row ul li:hover .svgTxt {
+  margin: 25% 0 0 -13%;
+  fill: #e64a3b;
 }
