@@ -70,18 +70,18 @@ var scrollOffset = -30;
       $container.isotope({
         filter: '*'
       });
-      $('.group-selectors a').click(function (e) {
+      $('.group-selectors-portfolio a').click(function (e) {
         e.preventDefault();
         var selector = $(this).attr('data-filter');
         $container.isotope({
           filter: selector,
           columnWidth: 4
         });
-        $('.group-selectors a.active').removeClass('active');
+        $('.group-selectors-portfolio a.active').removeClass('active');
         $(this).toggleClass('active');
         return false;
       });
-      $('.group-selectors a').each(function () {
+      $('.group-selectors-portfolio a').each(function () {
         $(this).append('<span></span>');
       });
     }

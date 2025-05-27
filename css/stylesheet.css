@@ -9170,7 +9170,21 @@ header .avatar:after {
   -moz-transform: scale(1.25);
   -ms-transform: scale(1.25);
   -o-transform: scale(1.25);
-  top: 30%;
+}
+
+.interests-row ul li:hover svg {
+  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  margin: 25% 0 0 -13%;
+  fill: #ffffff;
+}
+
+.interests-row ul li:hover .svgTxt {
+  margin: 25% 0 0 -13%;
+  fill: #e64a3b;
 }
 
 .interests-row ul li:hover span {
@@ -9196,18 +9210,16 @@ header .avatar:after {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
-  bottom: 0;
   margin: auto;
+  width: 50%;
+  border-radius: 100px;
 }
 
-.interests-row ul li i:before {
+.interests-row ul li svg {
+  width: 25px;
+  height: 25px;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  margin: 25% 0 0 -13%;
 }
 
 /*Education section*/
@@ -9417,18 +9429,18 @@ header .avatar:after {
   text-align: center;
 }
 
-.portfolio-holder .group-selectors,
-.skill-holder .group-selectors {
+.portfolio-holder .group-selectors-portfolio,
+.skill-holder .group-selectors-skills {
   text-align: center;
   margin: 10px auto;
   display: inline-block;
   position: relative;
 }
 
-.portfolio-holder .group-selectors:before,
-.portfolio-holder .group-selectors:after,
-.skill-holder .group-selectors:before,
-.skill-holder .group-selectors:after {
+.portfolio-holder .group-selectors-portfolio:before,
+.portfolio-holder .group-selectors-portfolio:after,
+.skill-holder .group-selectors-skills:before,
+.skill-holder .group-selectors-skills:after {
   font-family: 'Open Sans', sans-serif;
   position: absolute;
   font-size: 40px;
@@ -9438,20 +9450,20 @@ header .avatar:after {
   top: -9px;
 }
 
-.portfolio-holder .group-selectors:before,
-.skill-holder .group-selectors:before {
+.portfolio-holder .group-selectors-portfolio:before,
+.skill-holder .group-selectors-skills:before {
   content: "{";
   left: -40px;
 }
 
-.portfolio-holder .group-selectors:after,
-.skill-holder .group-selectors:after {
+.portfolio-holder .group-selectors-portfolio:after,
+.skill-holder .group-selectors-skills:after {
   content: "}";
   right: -40px;
 }
 
-.portfolio-holder .group-selectors a,
-.skill-holder .group-selectors a {
+.portfolio-holder .group-selectors-portfolio a,
+.skill-holder .group-selectors-skills a {
   margin: 0px 2px 10px 2px;
   text-transform: uppercase;
   font-size: 14px;
@@ -9465,10 +9477,10 @@ header .avatar:after {
   position: relative;
 }
 
-.portfolio-holder .group-selectors a:hover,
-.portfolio-holder .group-selectors a.active,
-.skill-holder .group-selectors a:hover,
-.skill-holder .group-selectors a.active {
+.portfolio-holder .group-selectors-portfolio a:hover,
+.portfolio-holder .group-selectors-portfolio a.active,
+.skill-holder .group-selectors-skills a:hover,
+.skill-holder .group-selectors-skills a.active {
   background-color: #e64a3b;
   color: #ffffff;
 }
@@ -10140,8 +10152,8 @@ select.top-drop-menu {
     display: none;
   }
 
-  .portfolio-holder .group-selectors:before,
-  .portfolio-holder .group-selectors:after {
+  .portfolio-holder .group-selectors-portfolio:before,
+  .portfolio-holder .group-selectors-portfolio:after {
     display: none;
   }
 
@@ -10293,26 +10305,4 @@ select.top-drop-menu {
 
 .myleft:before {
   content: '' !important;
-}
-
-.interests-row ul li svg {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  margin: 25% 0 0 -13%;
-}
-
-.interests-row ul li:hover svg {
-  transform: scale(1.25);
-  -webkit-transform: scale(1.25);
-  -moz-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  -o-transform: scale(1.25);
-  margin: 25% 0 0 -13%;
-  fill: #ffffff;
-}
-
-.interests-row ul li:hover .svgTxt {
-  margin: 25% 0 0 -13%;
-  fill: #e64a3b;
 }
