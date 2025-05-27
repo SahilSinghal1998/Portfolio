@@ -9075,6 +9075,11 @@ header .avatar:after {
   height: 100px;
 }
 
+.interests-row.big li a {
+  color: black;
+  /* color: #272425 */
+}
+
 .interests-row.big li span {
   font-size: 16px;
   width: 100%;
@@ -9153,6 +9158,10 @@ header .avatar:after {
 .interests-row ul li:hover {
   background-color: #e64a3b;
   color: #ffffff;
+}
+
+.interests-row ul li:hover a {
+  color: white;
 }
 
 .interests-row ul li:hover i {
@@ -9294,10 +9303,6 @@ header .avatar:after {
 }
 
 /*Skills*/
-.skill-holder {
-  min-height: 140px;
-}
-
 .skill-holder .event-content {
   margin-bottom: 100px !important;
 }
@@ -9407,11 +9412,13 @@ header .avatar:after {
   margin: 30px auto;
 }
 
-.portfolio-holder {
+.portfolio-holder,
+.skill-holder {
   text-align: center;
 }
 
-.portfolio-holder .group-selectors {
+.portfolio-holder .group-selectors,
+.skill-holder .group-selectors {
   text-align: center;
   margin: 10px auto;
   display: inline-block;
@@ -9419,7 +9426,9 @@ header .avatar:after {
 }
 
 .portfolio-holder .group-selectors:before,
-.portfolio-holder .group-selectors:after {
+.portfolio-holder .group-selectors:after,
+.skill-holder .group-selectors:before,
+.skill-holder .group-selectors:after {
   font-family: 'Open Sans', sans-serif;
   position: absolute;
   font-size: 40px;
@@ -9429,17 +9438,20 @@ header .avatar:after {
   top: -9px;
 }
 
-.portfolio-holder .group-selectors:before {
+.portfolio-holder .group-selectors:before,
+.skill-holder .group-selectors:before {
   content: "{";
   left: -40px;
 }
 
-.portfolio-holder .group-selectors:after {
+.portfolio-holder .group-selectors:after,
+.skill-holder .group-selectors:after {
   content: "}";
   right: -40px;
 }
 
-.portfolio-holder .group-selectors a {
+.portfolio-holder .group-selectors a,
+.skill-holder .group-selectors a {
   margin: 0px 2px 10px 2px;
   text-transform: uppercase;
   font-size: 14px;
@@ -9454,7 +9466,9 @@ header .avatar:after {
 }
 
 .portfolio-holder .group-selectors a:hover,
-.portfolio-holder .group-selectors a.active {
+.portfolio-holder .group-selectors a.active,
+.skill-holder .group-selectors a:hover,
+.skill-holder .group-selectors a.active {
   background-color: #e64a3b;
   color: #ffffff;
 }
