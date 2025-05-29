@@ -86,6 +86,29 @@ var scrollOffset = -30;
       });
     }
 
+    /*if ($('#skillslist > li').length > 0) {
+      var $container = $('#skillslist');
+      $container.isotope({
+        filter: '*'
+      });
+
+      $('.group-selectors-skills a').click(function (e) {
+        e.preventDefault();
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+          filter: selector,
+          columnWidth: 4
+        });
+        $('.group-selectors-skills a.active').removeClass('active');
+        $(this).toggleClass('active');
+        return false;
+      });
+
+      $('.group-selectors-skills a').each(function () {
+        $(this).append('<span></span>');
+      });
+    }*/
+
     $('[data-placeholder]').focus(function () {
       var input = $(this);
       if (input.val() == input.attr('data-placeholder')) {
