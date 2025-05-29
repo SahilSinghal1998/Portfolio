@@ -8270,12 +8270,12 @@ header {
 
 blockquote.quote {
   font-family: 'Open Sans', sans-serif;
-  /* equivalent to 16px, adjust as needed */
   font-size: 14px;
   color: #272425;
   background-color: rgba(216, 205, 187, 0.3);
   border-radius: 0 10px 10px 0;
   max-width: 560px;
+  /* equivalent to 16px, adjust as needed */
   padding: 1rem;
 }
 
@@ -9146,6 +9146,33 @@ header .avatar:after {
   background-color: #d8cdbb;
 }
 
+.interests-row ul li i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  border-radius: 100px;
+}
+
+.interests-row ul li svg {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin: 25% 0 0 -13%;
+}
+
+.interests-row ul li span {
+  text-transform: capitalize;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  top: 30%;
+}
+
 .interests-row ul li i,
 .interests-row ul li svg,
 .interests-row ul li span {
@@ -9155,13 +9182,10 @@ header .avatar:after {
   transition: all 0.3s ease;
 }
 
-.interests-row ul li:hover {
+.interests-row ul li:hover,
+.interests-row ul li:hover a {
   background-color: #e64a3b;
   color: #ffffff;
-}
-
-.interests-row ul li:hover a {
-  color: white;
 }
 
 .interests-row ul li:hover i {
@@ -9195,33 +9219,6 @@ header .avatar:after {
   -o-transform: scale(0.9);
 }
 
-.interests-row ul li span {
-  text-transform: capitalize;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  top: 30%;
-}
-
-.interests-row ul li i {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 50%;
-  border-radius: 100px;
-}
-
-.interests-row ul li svg {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  margin: 25% 0 0 -13%;
-}
-
 /*Education section*/
 .event-item {
   padding-bottom: 40px;
@@ -9239,7 +9236,7 @@ header .avatar:after {
   font-family: fontawesome;
   text-align: center;
   font-size: 25px;
-  width: 35px;
+  width: 29px;
   height: 25px;
   line-height: 25px;
   font-size: 30px;
@@ -10004,11 +10001,11 @@ select.top-drop-menu {
   text-align: center;
 }
 
-/*@media (min-width: 1200px) {
+@media (min-width: 1200px) {
   .portfolio-holder .portfolio-item a {
-     min-height: 358px;
+    min-height: 358px;
   }
-}*/
+}
 
 @media (max-width: 1199px) {
   header .sticky-paper-head {
@@ -10056,7 +10053,7 @@ select.top-drop-menu {
   }
 
   .skill-holder {
-    min-height: 200px;
+    min-height: 0px;
   }
 
   .sticky-paper-body .shadow:before {
@@ -10153,7 +10150,9 @@ select.top-drop-menu {
   }
 
   .portfolio-holder .group-selectors-portfolio:before,
-  .portfolio-holder .group-selectors-portfolio:after {
+  .portfolio-holder .group-selectors-portfolio:after,
+  .skill-holder .group-selectors-skills:before,
+  .skill-holder .group-selectors-skills:after {
     display: none;
   }
 
