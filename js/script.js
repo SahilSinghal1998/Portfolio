@@ -35,7 +35,6 @@ var scrollOffset = -30;
       fontsize: "20",
       bgcolor: "#D8CDBB",
       dimension: "150"
-
     });
 
     $('.has-shadow').append('<div class="shadow"></div>');
@@ -136,7 +135,7 @@ var scrollOffset = -30;
     e.preventDefault();
     $('html,body').animate({
       scrollTop: 0
-    }, 2000);
+    }, 2000, 'easeInOutExpo');
   });
 
   if ($('a[data-rel="prettyphoto"]').length > 0) {
@@ -178,7 +177,6 @@ var scrollOffset = -30;
   $('.top-drop-menu').change(function () {
     var loc = ($(this).find('option:selected').val());
     $('.nav-menu a').address(loc);
-
   });
 
   $.address.change(function (event) {
@@ -220,7 +218,6 @@ var scrollOffset = -30;
     clickedMenu.parent().toggleClass('active');
     scrollToSection(clickedMenu.attr('href'));
   });
-
 })(jQuery);
 
 // Sticky Nav
