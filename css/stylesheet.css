@@ -8833,6 +8833,12 @@ header .avatar:after {
   fill: #e64a3b;
 }
 
+.interests-row ul li:hover .svgbig {
+  transform: scale(2.25) !important;
+  margin: 25% 0 0 -13%;
+  fill: #ffffff;
+}
+
 .interests-row ul li:hover span {
   transform: scale(0.9);
 }
