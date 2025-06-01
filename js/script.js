@@ -85,7 +85,7 @@ var scrollOffset = -30;
       });
     }
 
-    if ($('#skillslist > li').length > 0) {
+    /*if ($('#skillslist > li').length > 0) {
       var $container = $('#skillslist');
       $container.isotope({
         filter: '*'
@@ -106,7 +106,7 @@ var scrollOffset = -30;
       $('.group-selectors-skills a').each(function () {
         $(this).append('<span></span>');
       });
-    }
+    }*/
 
     $('[data-placeholder]').focus(function () {
       var input = $(this);
