@@ -9880,7 +9880,6 @@ select.top-drop-menu {
 #websitename {
   transform: scale(1, 1);
   transition: all ease 1s;
-
 }
 
 #websitename:hover {
